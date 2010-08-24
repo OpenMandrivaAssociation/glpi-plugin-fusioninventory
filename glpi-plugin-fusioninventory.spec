@@ -1,7 +1,6 @@
 %define name glpi-plugin-fusioninventory
 %define version 2.2.2
-%define beta RC1
-%define release %mkrel 0.%{beta}.1
+%define release %mkrel 1
 
 Summary: SNMP agent plugin
 Name: %{name}
@@ -10,7 +9,7 @@ Release: %{release}
 License: GPL
 Group: Monitoring
 Url: http://fusioninventory.org/wordpress/
-Source0: http://forge.fusioninventory.org/attachments/download/19/fusioninventory-for-glpi-%{version}-%{beta}.tar.gz
+Source0: http://forge.fusioninventory.org/attachments/download/19/fusioninventory-for-glpi-%{version}-release.tar.gz
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
