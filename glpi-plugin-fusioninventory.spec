@@ -1,30 +1,53 @@
 %define name glpi-plugin-fusioninventory
-%define version 2.3.0
-%define pre RC1
-%define release %mkrel 0.%{pre}.1
+%define version 2.3.1
+%define release %mkrel 1
 
-Summary: SNMP agent plugin
-Name: %{name}
+Name:    %{name}
 Version: %{version}
 Release: %{release}
+Summary: fusioninventory communication server
 License: GPL
-Group: Monitoring
-Url: http://fusioninventory.org/wordpress/
-Source0: http://forge.fusioninventory.org/attachments/download/19/fusioninventory_%{version}-%{pre}.tar.gz
+Group:   Monitoring
+Url:     http://fusioninventory.org/wordpress/
+Source0: http://forge.fusioninventory.org/attachments/download/19/fusioninventory_metapackage_%{version}.tar.gz
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
 %description
-This plugin enables you get informations for networking devices by SNMP.
+This plugin enables you to manage fusioninventory agents from GLPI.
+
+%package snmp
+Summary:        SNMP extension for fusioninventory
+Group:          Monitoring
+License:        GPL
+BuildArch:      noarch
+Requires:       %{name} =  %{version}-%{release}
+
+%description snmp
+This plugin allow to perform remote inventory with fusioninventory agents.
+
+%package inventory
+Summary:        Inventory extension for fusioninventory
+Group:          Monitoring
+License:        GPL
+BuildArch:      noarch
+Requires:       %{name} =  %{version}-%{release}
+
+%description inventory
+This plugin allow to perform local inventory with fusioninventory agents.
 
 %prep
-%setup -q -n fusioninventory
+%setup -q -c
 
 %install
 rm -rf %{buildroot}
 
-install -d -m 755 %{buildroot}%{_datadir}/glpi/plugins/fusioninventory
-cp -ap * %{buildroot}%{_datadir}/glpi/plugins/fusioninventory
+install -d -m 755 %{buildroot}%{_datadir}/glpi/plugins
+cp -pr fusioninventory %{buildroot}%{_datadir}/glpi/plugins
+cp -pr fusinvsnmp %{buildroot}%{_datadir}/glpi/plugins
+cp -pr fusinvinventory %{buildroot}%{_datadir}/glpi/plugins
+
+rm -rf %{buildroot}%{_datadir}/glpi/plugins/fusinvsnmp/docs
 rm -rf %{buildroot}%{_datadir}/glpi/plugins/fusioninventory/docs
 
 %clean
@@ -32,5 +55,14 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc docs/*.TXT
+%doc fusioninventory/docs/*.TXT
 %{_datadir}/glpi/plugins/fusioninventory
+
+%files snmp
+%defattr(-,root,root)
+%doc fusinvsnmp/docs/*.TXT
+%{_datadir}/glpi/plugins/fusinvsnmp
+
+%files inventory
+%defattr(-,root,root)
+%{_datadir}/glpi/plugins/fusinvinventory
