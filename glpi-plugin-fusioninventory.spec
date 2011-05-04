@@ -1,5 +1,5 @@
 %define name glpi-plugin-fusioninventory
-%define version 2.3.1
+%define version 2.3.2
 %define release %mkrel 1
 
 Name:    %{name}
@@ -9,7 +9,7 @@ Summary: fusioninventory communication server
 License: GPL
 Group:   Monitoring
 Url:     http://fusioninventory.org/wordpress/
-Source0: http://forge.fusioninventory.org/attachments/download/19/fusioninventory_metapackage_%{version}.tar.gz
+Source0: http://forge.fusioninventory.org/attachments/download/19/fusioninventory-for-glpi-metapackage_%{version}.tar.gz
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
