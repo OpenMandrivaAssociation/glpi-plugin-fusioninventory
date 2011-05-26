@@ -1,5 +1,5 @@
 %define name glpi-plugin-fusioninventory
-%define version 2.3.2
+%define version 2.3.4
 %define release %mkrel 1
 
 Name:    %{name}
