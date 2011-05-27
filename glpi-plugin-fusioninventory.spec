@@ -1,6 +1,8 @@
 %define name glpi-plugin-fusioninventory
 %define version 2.3.4
-%define release %mkrel 1
+%define release %mkrel 2
+
+%define _requires_exceptions pear(.*)
 
 Name:    %{name}
 Version: %{version}
@@ -20,8 +22,8 @@ This plugin enables you to manage fusioninventory agents from GLPI.
 Summary:        SNMP extension for fusioninventory
 Group:          Monitoring
 License:        GPL
+Requires:       %{name} = %{version}-%{release}
 BuildArch:      noarch
-Requires:       %{name} =  %{version}-%{release}
 
 %description snmp
 This plugin allow to perform remote inventory with fusioninventory agents.
@@ -30,8 +32,8 @@ This plugin allow to perform remote inventory with fusioninventory agents.
 Summary:        Inventory extension for fusioninventory
 Group:          Monitoring
 License:        GPL
+Requires:       %{name} = %{version}-%{release}
 BuildArch:      noarch
-Requires:       %{name} =  %{version}-%{release}
 
 %description inventory
 This plugin allow to perform local inventory with fusioninventory agents.
