@@ -1,6 +1,6 @@
 %define name glpi-plugin-fusioninventory
-%define version 2.3.4
-%define release %mkrel 2
+%define version 2.3.5
+%define release %mkrel 1
 
 %define _requires_exceptions pear(.*)
 
