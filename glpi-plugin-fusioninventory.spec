@@ -1,5 +1,5 @@
 %define name glpi-plugin-fusioninventory
-%define version 2.3.6
+%define version 2.4.0
 %define release %mkrel 1
 
 %define _requires_exceptions pear(.*)
@@ -11,7 +11,7 @@ Summary: fusioninventory communication server
 License: GPL
 Group:   Monitoring
 Url:     http://fusioninventory.org/wordpress/
-Source0: http://forge.fusioninventory.org/attachments/download/19/fusioninventory-for-glpi-metapackage_%{version}.tar.gz
+Source0: http://forge.fusioninventory.org/attachments/download/515/fusioninventory-for-glpi-metapackage_0.80_1.1.tar.gz
 BuildArch: noarch
 BuildRoot: %{_tmppath}/%{name}-%{version}
 
@@ -38,6 +38,16 @@ BuildArch:      noarch
 %description inventory
 This plugin allow to perform local inventory with fusioninventory agents.
 
+%package deploy
+Summary:        Deploy extension for fusioninventory
+Group:          Monitoring
+License:        GPL
+Requires:       %{name} = %{version}-%{release}
+BuildArch:      noarch
+
+%description deploy
+This plugin allow to deploy with fusioninventory agents.
+
 %prep
 %setup -q -c
 
@@ -45,9 +55,10 @@ This plugin allow to perform local inventory with fusioninventory agents.
 rm -rf %{buildroot}
 
 install -d -m 755 %{buildroot}%{_datadir}/glpi/plugins
-cp -pr fusioninventory %{buildroot}%{_datadir}/glpi/plugins
-cp -pr fusinvsnmp %{buildroot}%{_datadir}/glpi/plugins
-cp -pr fusinvinventory %{buildroot}%{_datadir}/glpi/plugins
+cp -rp fusinvdeploy %{buildroot}%{_datadir}/glpi/plugins/
+cp -rp fusinvinventory %{buildroot}%{_datadir}/glpi/plugins/
+cp -rp fusinvsnmp %{buildroot}%{_datadir}/glpi/plugins/
+cp -rp fusioninventory %{buildroot}%{_datadir}/glpi/plugins/
 
 rm -rf %{buildroot}%{_datadir}/glpi/plugins/fusinvsnmp/docs
 rm -rf %{buildroot}%{_datadir}/glpi/plugins/fusioninventory/docs
@@ -68,3 +79,7 @@ rm -rf %{buildroot}
 %files inventory
 %defattr(-,root,root)
 %{_datadir}/glpi/plugins/fusinvinventory
+
+%files deploy
+%defattr(-,root,root)
+%{_datadir}/glpi/plugins/fusinvdeploy
