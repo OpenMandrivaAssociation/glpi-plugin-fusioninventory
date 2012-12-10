@@ -75,3 +75,55 @@ rm -rf %{buildroot}%{_datadir}/glpi/plugins/fusioninventory/docs
 
 %files deploy
 %{_datadir}/glpi/plugins/fusinvdeploy
+
+
+%changelog
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 2.4.0-2mdv2012.0
++ Revision: 771127
+- various fixes
+
+* Sat Feb 04 2012 Oden Eriksson <oeriksson@mandriva.com> 2.4.0-1
++ Revision: 771088
+- 2.4.0
+
+* Thu Jul 07 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.3.6-1
++ Revision: 689109
+- new version
+
+* Sun Jun 26 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.3.5-1
++ Revision: 687293
+- new version
+
+* Fri May 27 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.3.4-2
++ Revision: 680302
+- fix automatic dependencies
+
+* Thu May 26 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.3.4-1
++ Revision: 679178
+- new version
+
+* Wed May 04 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.3.2-1
++ Revision: 666419
+- new version
+
+* Sun May 01 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.3.1-1
++ Revision: 661415
+- new version
+
+* Thu Mar 31 2011 Guillaume Rousse <guillomovitch@mandriva.org> 2.3.0-0.RC1.1
++ Revision: 649402
+- new version
+
+* Tue Aug 24 2010 Guillaume Rousse <guillomovitch@mandriva.org> 2.2.2-1mdv2011.0
++ Revision: 572709
+- 2.2.2 final
+
+* Wed Aug 18 2010 Guillaume Rousse <guillomovitch@mandriva.org> 2.2.2-0.RC1.1mdv2011.0
++ Revision: 571244
+- new version
+
+* Mon May 03 2010 Guillaume Rousse <guillomovitch@mandriva.org> 2.2.0-0.beta4.1mdv2010.1
++ Revision: 541805
+- import glpi-plugin-fusioninventory
+
+
