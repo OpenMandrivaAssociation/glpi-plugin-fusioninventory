@@ -13,7 +13,7 @@ Version: 2.4.0
 Release: %{release}
 License: GPL
 Group: Monitoring
-URL: http://fusioninventory.org/wordpress/
+URL: https://fusioninventory.org/wordpress/
 Source0: http://forge.fusioninventory.org/attachments/download/515/fusioninventory-for-glpi-metapackage_0.80_1.1.tar.gz
 BuildArch: noarch
 
